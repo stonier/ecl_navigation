@@ -1,0 +1,13 @@
+prefix=@CMAKE_INSTALL_PREFIX@
+exec_prefix=${prefix}
+
+Name: ecl_mobile_robot
+Description: ECL common mobile robot methods and interfaces.
+Version: @PROJECT_VERSION@
+URL: http://code.google.com/p/embedded-control-library/
+
+Requires: ecl_geometry, ecl_linear_algebra
+includedir=${prefix}/include
+libdir=${exec_prefix}/lib
+Libs: -L${libdir} -lecl_mobile_robot
+Cflags: -I${includedir}

@@ -1,0 +1,65 @@
+/**
+ * @file /ecl_mobile_robot/src/lib/pose.cpp
+ *
+ * @brief Implementation of the mobile robot pose class.
+ *
+ * @date May 2010
+ **/
+
+/*****************************************************************************
+** Includes
+*****************************************************************************/
+
+#include "../../include/ecl/mobile_robot/pose.hpp"
+
+/*****************************************************************************
+** Namespaces
+*****************************************************************************/
+
+namespace ecl {
+
+/*****************************************************************************
+** Using
+*****************************************************************************/
+
+using linear_algebra::Vector2d;
+using linear_algebra::Rotation2D;
+
+/*****************************************************************************
+** Implementation [Operators]
+*****************************************************************************/
+
+Pose Pose::operator-(const Pose &a) const {
+	Pose rel_pose;
+	Vector2d dxy;
+	dxy << (elements[0] - a.elements[0]), (elements[1] - a.elements[1]);
+	Rotation2D<double> rotation(-a.elements[2]);
+	Vector2d dxy_heading_frame = rotation*dxy;
+	rel_pose << dxy_heading_frame[0], dxy_heading_frame[1], wrap_angle(elements[2]-a.elements[2]);
+	return rel_pose;
+}
+
+Pose Pose::operator+(const Pose &rel_pose) const {
+	Pose b;
+	Rotation2D<double> rotation(elements[2]);
+	Vector2d dxy_new_frame;
+	dxy_new_frame = rotation*rel_pose.vector().segment<2>(0);
+	b[0] = elements[0] + dxy_new_frame[0];
+	b[1] = elements[1] + dxy_new_frame[1];
+	b[2] = elements[2] + rel_pose[2];
+	ecl::wrap_angle( b[2] );
+	return b;
+}
+
+Pose& Pose::operator+=(const Pose &rel_pose) {
+	Rotation2D<double> rotation(elements[2]);
+	Vector2d dxy_new_frame;
+	dxy_new_frame = rotation*(rel_pose.vector().segment<2>(0));
+	elements[0] += dxy_new_frame[0];
+	elements[1] += dxy_new_frame[1];
+	elements[2] += rel_pose[2];
+	wrap_angle( elements[2] );
+	return (*this);
+}
+
+} // namespace ecl

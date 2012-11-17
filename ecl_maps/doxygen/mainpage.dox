@@ -1,0 +1,36 @@
+/**
+\mainpage
+\htmlinclude manifest.html
+
+\section packageSummary Package Summary
+
+  This group includes c++ like containers for building maps in
+  robotic navigation.
+
+@section CompilingLinking Compiling & Linking
+
+	Include the following at the top of any translation unit which
+	requires this library:
+
+	@code
+	#include <ecl/maps.hpp>
+
+	// The classes
+	using ecl::GridMap;
+	@endcode
+
+	Since the manipulator classes are templatised headers, there is no
+	need to directly link (however, it's dependencies will need linking).
+
+\section usage Usage
+
+    See the class documentation and unit test for further information.
+
+\section unitTests Unit Tests
+
+    - src/test/grid_map.cpp
+
+\section ChangeLog
+
+    - <b>Jan 10</b> : Fixed size @ref ecl::GridMap "grid maps".
+*/
