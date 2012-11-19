@@ -1,8 +1,14 @@
 ###############################################################################
-# FILES
+# Subdirectories
+###############################################################################
+
+add_subdirectory(kinematics)
+
+###############################################################################
+# Files
 ###############################################################################
 
 file(GLOB HEADERS RELATIVE ${CMAKE_CURRENT_SOURCE_DIR} *.hpp)
   
-install(FILES ${HEADERS} DESTINATION include/ecl/mobile_robot)
+install(FILES ${HEADERS} DESTINATION ${CATKIN_GLOBAL_INCLUDE_DESTINATION}/ecl/mobile_robot)
 

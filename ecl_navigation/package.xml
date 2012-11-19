@@ -1,0 +1,35 @@
+<package>
+  <name>ecl_navigation</name>
+  <version>0.5.0</version>
+  <description>
+    This stack aims to bring the common tools and algorithms needed to
+    develop navigation algorithms, in particular slam. It does not focus on
+    the end-point solution, rather the tools needed to create a variety of
+    end-point solutions.
+  </description>
+  <maintainer email="d.stonier@gmail.com">Daniel Stonier</maintainer>
+  <license>BSD</license>
+  <url type="website">http://www.ros.org/wiki/ecl_navigation</url>
+  <url type="repository">https://github.com/stonier/ecl_navigation</url>
+  <url type="bugtracker">https://github.com/stonier/ecl_navigation/issues</url>
+  <author email="d.stonier@gmail.com">Daniel Stonier</author>
+
+  <build_depend>ecl_tools</build_depend>
+  <build_depend>ecl_lite</build_depend>
+  <build_depend>ecl_core</build_depend>
+  <build_depend>ecl_maps</build_depend>
+  <build_depend>ecl_navigation_apps</build_depend>
+  <build_depend>ecl_mobile_robot</build_depend>
+  <build_depend>ecl_slam</build_depend>
+
+  <run_depend>ecl_tools</run_depend>
+  <run_depend>ecl_lite</run_depend>
+  <run_depend>ecl_core</run_depend>
+  <run_depend>ecl_maps</run_depend>
+  <run_depend>ecl_navigation_apps</run_depend>
+  <run_depend>ecl_mobile_robot</run_depend>
+  <run_depend>ecl_slam</run_depend>
+  <export>
+    <metapackage/>
+  </export>
+</package>
