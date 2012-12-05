@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <package>
   <name>ecl_slam</name>
-  <version>0.50.0</version>
+  <version>0.50.1</version>
   <description>
     Slam structures and mechanisms for various algorithms. A level of 
     genericity is the focus here - where elements are common to many
