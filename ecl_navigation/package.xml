@@ -14,6 +14,7 @@
   <url type="bugtracker">https://github.com/stonier/ecl_navigation/issues</url>
   <author email="d.stonier@gmail.com">Daniel Stonier</author>
 
+  <buildtool_depend>catkin</buildtool_depend>
   <run_depend>ecl_maps</run_depend>
   <run_depend>ecl_navigation_apps</run_depend>
   <run_depend>ecl_mobile_robot</run_depend>
