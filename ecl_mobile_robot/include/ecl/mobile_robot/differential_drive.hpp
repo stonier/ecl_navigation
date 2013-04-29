@@ -17,6 +17,7 @@
 *****************************************************************************/
 
 #include "kinematics/differential_drive.hpp"
+#include "macros.hpp"
 
 /*****************************************************************************
 ** Namespaces
@@ -34,7 +35,7 @@ namespace ecl {
  * This class typedefs various algorithm groups as well as providing
  * some generic structures/methods for differential drive robot types.
  */
-class DifferentialDrive {
+class ecl_mobile_robot_PUBLIC DifferentialDrive {
 public:
 	typedef mobile_robot::DifferentialDriveKinematics Kinematics;
 };
