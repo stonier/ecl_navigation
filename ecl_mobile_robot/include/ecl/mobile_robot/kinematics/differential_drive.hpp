@@ -19,6 +19,7 @@
 #include <ecl/config/macros.hpp>
 #include <ecl/linear_algebra.hpp>
 #include <ecl/geometry/pose2d.hpp>
+#include "../macros.hpp"
 
 /*****************************************************************************
 ** Namespaces
@@ -59,7 +60,7 @@ namespace mobile_robot {
  * x axis for the local pose frame of reference and the frame of reference
  * is located centrally between the two wheels.
  */
-class DifferentialDriveKinematics {
+class ecl_mobile_robot_PUBLIC DifferentialDriveKinematics {
 public:
 	/**
 	 * @brief Configures the parameters defining the structure.
