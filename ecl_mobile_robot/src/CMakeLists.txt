@@ -4,6 +4,6 @@
 
 add_subdirectory(lib)
 if(CATKIN_ENABLE_TESTING)
-  add_subdirectory(test)
+#  add_subdirectory(test)
 endif()
-add_subdirectory(examples)
+#add_subdirectory(examples)
