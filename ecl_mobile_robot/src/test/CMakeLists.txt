@@ -3,9 +3,18 @@
 ###############################################################################
 
 macro(ecl_add_gtest TESTNAME)
-  catkin_add_gtest(ecl_test_${TESTNAME} ${TESTNAME}.cpp)
+  ament_add_gtest(ecl_test_${TESTNAME} ${TESTNAME}.cpp)
   if(TARGET ecl_test_${TESTNAME})
-    target_link_libraries(ecl_test_${TESTNAME} ${PROJECT_NAME} ${catkin_LIBRARIES})
+    target_link_libraries(ecl_test_${TESTNAME} ${PROJECT_NAME})
+		ament_target_dependencies(ecl_test_${TESTNAME}
+			ecl_build
+			ecl_errors
+			ecl_geometry
+			ecl_math
+			ecl_formatters
+			ecl_linear_algebra
+		)
+
   endif()
 endmacro(ecl_add_gtest)
 
@@ -14,4 +23,3 @@ endmacro(ecl_add_gtest)
 ###############################################################################
 
 ecl_add_gtest(partial_inverse)
-
