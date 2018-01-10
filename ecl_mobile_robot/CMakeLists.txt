@@ -2,46 +2,35 @@
 # Cmake
 ##############################################################################
 
-cmake_minimum_required(VERSION 2.8.3)
+cmake_minimum_required(VERSION 3.5)
 project(ecl_mobile_robot)
 
 ##############################################################################
 # Catkin
 ##############################################################################
 
-find_package(catkin
-    REQUIRED
-    COMPONENTS
-        ecl_build 
-        ecl_errors
-        ecl_geometry
-        ecl_math
-        ecl_formatters
-        ecl_linear_algebra
-)
+find_package(ament_cmake REQUIRED)
+find_package(ecl_build  REQUIRED)
+find_package(ecl_errors REQUIRED)
+#find_package(ecl_geometry# REQUIRED)
+find_package(ecl_math REQUIRED)
+find_package(ecl_formatters REQUIRED)
+#find_package(ecl_linear_algebra REQUIRED)
+
     
-##############################################################################
-# Exports
-##############################################################################
-
-catkin_package(
-    INCLUDE_DIRS include
-    LIBRARIES ${PROJECT_NAME}
-    CATKIN_DEPENDS
-        ecl_build
-        ecl_errors
-        ecl_geometry
-        ecl_math
-        ecl_formatters
-        ecl_linear_algebra
-        )
-
 ##############################################################################
 # Project Configuration
 ##############################################################################
 
 ecl_enable_cxx11_compiler()
-include_directories(include ${catkin_INCLUDE_DIRS})
+include_directories(include 
+  ${ecl_build_INCLUDE_DIRS}
+  ${ecl_errors_INCLUDE_DIRS}
+  ${ecl_geometry_INCLUDE_DIRS}
+  ${ecl_math_INCLUDE_DIRS}
+  ${ecl_formatters_INCLUDE_DIRS}
+  ${ecl_linear_algebra_INCLUDE_DIRS}
+  )
 
 ##############################################################################
 # Sources
