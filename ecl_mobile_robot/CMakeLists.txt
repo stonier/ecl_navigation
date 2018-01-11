@@ -12,10 +12,10 @@ project(ecl_mobile_robot)
 find_package(ament_cmake REQUIRED)
 find_package(ecl_build  REQUIRED)
 find_package(ecl_errors REQUIRED)
-#find_package(ecl_geometry# REQUIRED)
+find_package(ecl_geometry REQUIRED)
 find_package(ecl_math REQUIRED)
 find_package(ecl_formatters REQUIRED)
-#find_package(ecl_linear_algebra REQUIRED)
+find_package(ecl_linear_algebra REQUIRED)
 
     
 ##############################################################################
@@ -40,4 +40,6 @@ add_subdirectory(include)
 add_subdirectory(src)
 
 
-
+ament_export_include_directories(include)
+ament_export_libraries(${PROJECT_NAME})
+ament_package()
